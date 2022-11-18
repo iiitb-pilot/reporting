@@ -27,6 +27,8 @@ debezium_connectors:
     tables: "idrepo.anonymous_profile,idrepo.channel_info"
   - name: "mosip_print"
     tables: "print.print_transaction"
+  - name: "mosip_keymgr"
+    tables: "keymgr.mv_partner_certificate_expiry"
 
 es_kafka_connectors:
   enabled: true
