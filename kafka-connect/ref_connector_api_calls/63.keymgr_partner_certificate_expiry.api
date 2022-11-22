@@ -6,12 +6,12 @@
 #DB_PREFIX_INDEX=
 #ES_URL=
 
-CONN_NAME="keymgr_mv_partner_certificate_expiry_$DB_PREFIX_INDEX"; # change this.. give unique name for each db/table
+CONN_NAME="keymgr_partner_certificate_expiry_$DB_PREFIX_INDEX"; # change this.. give unique name for each db/table
 
 ES_CONN_URL='es-connect:8083'; # needn't change .. this is the ES-connector service name
 
 DB_NAME='mosip_keymgr'; # change this
-DB_TABLES='keymgr.mv_partner_certificate_expiry'
+DB_TABLES='keymgr.partner_certificate_expiry'
 ES_INDICES=$(echo $DB_TABLES | sed -E "s/([^,]+)/$DB_PREFIX_INDEX.\1/g")
 
 curl \
