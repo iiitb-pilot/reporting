@@ -28,7 +28,7 @@ debezium_connectors:
   - name: "mosip_print"
     tables: "print.print_transaction"
   - name: "mosip_keymgr"
-    tables: "keymgr.mv_partner_certificate_expiry"
+    tables: "keymgr.partner_certificate_expiry"
 
 es_kafka_connectors:
   enabled: true
