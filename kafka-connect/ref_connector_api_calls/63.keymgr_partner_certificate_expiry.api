@@ -64,7 +64,7 @@ curl \
           "transforms.tsconvert05.input.type": "micro_sec",
 
           "transforms.tsSelect.type": "io.mosip.kafka.connect.transforms.TimestampSelector$Value",
-          "transforms.tsSelect.ts.order": "mosip_expiry_on",
+          "transforms.tsSelect.ts.order": "partner_expiry_on,inter_expiry_on,ca_expiry_on,mosip_expiry_on",
           "transforms.tsSelect.output.field": "@timestamp_gen"
       }
 }';
