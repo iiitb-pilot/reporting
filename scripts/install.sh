@@ -14,6 +14,7 @@ CHART_VERSION=12.0.1
 echo "Adding helm repos"
 helm repo add mosip https://mosip.github.io/mosip-helm
 helm repo update
+helm dependency update reporting-init/
 
 # Creating namespace with istio-injeciton
 echo "Creating namespace"
@@ -50,4 +51,4 @@ unset TO_REPLACE
 
 kubectl delete cm --ignore-not-found=true debz-conn-confmap -n $NS; kubectl create cm debz-conn-confmap --from-file=$DEBEZ_CONN_FILE -n $NS
 kubectl delete cm --ignore-not-found=true es-conn-confmap -n $NS; kubectl create cm es-conn-confmap --from-file=$ES_CONN_FOLDER -n $NS
-helm -n $NS install reporting-init mosip/reporting-init --wait --version $CHART_VERSION -f values-init.yaml --set base.db_prefix=$INSTALL_NAME --set debezium_connectors.existingConfigMap=debz-conn-confmap --set es_kafka_connectors.existingConfigMap=es-conn-confmap
+helm -n $NS install reporting-init reporting-init --wait --version $CHART_VERSION -f values-init.yaml --set base.db_prefix=$INSTALL_NAME --set debezium_connectors.existingConfigMap=debz-conn-confmap --set es_kafka_connectors.existingConfigMap=es-conn-confmap
