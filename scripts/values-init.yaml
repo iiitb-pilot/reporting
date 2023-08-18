@@ -34,3 +34,9 @@ es_kafka_connectors:
   enabled: true
   delay_between_connectors: "10s"
   # existingConfigMap:
+
+base:
+  db_prefix: "mosip"
+  db_user: postgres
+  db_hostname: "postgres-postgresql.postgres"
+  db_port: "5432"
