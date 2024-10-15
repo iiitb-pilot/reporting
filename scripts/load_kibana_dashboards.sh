@@ -26,6 +26,6 @@ for file in ${1%/}/*.ndjson ; do
   sed -i.bak "s/___DB_PREFIX_INDEX___/$INSTALL_NAME/g" $TEMP_OBJ_FILE
   echo ;
   echo "Loading : $file"
-  curl -XPOST "https://${KIBANA_URL%/}/api/saved_objects/_import" -H "kbn-xsrf: true" --form file=@$TEMP_OBJ_FILE
+  curl -XPOST "https://${KIBANA_URL%/}/api/saved_objects/_import?overwrite=true" -H "kbn-xsrf: true" --form file=@$TEMP_OBJ_FILE
   rm $TEMP_OBJ_FILE "$TEMP_OBJ_FILE.bak"
 done

@@ -25,8 +25,18 @@ debezium_connectors:
     tables: "regprc.registration,regprc.registration_list,regprc.anonymous_profile"
   - name: "mosip_idrepo"
     tables: "idrepo.anonymous_profile,idrepo.channel_info"
+  - name: "mosip_print"
+    tables: "print.print_transaction"
+  - name: "mosip_keymgr"
+    tables: "keymgr.partner_certificate_expiry"
 
 es_kafka_connectors:
   enabled: true
   delay_between_connectors: "10s"
   # existingConfigMap:
+
+base:
+  db_prefix: "mosip"
+  db_user: postgres
+  db_hostname: "postgres-postgresql.postgres"
+  db_port: "5432"
