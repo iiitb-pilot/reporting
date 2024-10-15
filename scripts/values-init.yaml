@@ -30,7 +30,7 @@ debezium_connectors:
   - name: "mosip_keymgr"
     tables: "keymgr.partner_certificate_expiry"
   - name: "mosip_migrater_test"
-      tables: "public.packet_tracker"
+    tables: "public.packet_tracker"
 
 es_kafka_connectors:
   enabled: true
