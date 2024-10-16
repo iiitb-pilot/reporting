@@ -18,7 +18,7 @@ curl \
   -X POST \
   http://$ES_CONN_URL/connectors \
   -H 'Content-Type: application/json' \
-  -d \v
+  -d \
   '{
       "name": '\"$CONN_NAME\"',
       "config": {
