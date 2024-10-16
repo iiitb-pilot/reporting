@@ -1,7 +1,7 @@
 base:
   db_prefix: "mosip"
   db_user: postgres
-  db_hostname: "13.235.252.35"
+  db_hostname: "postgres.civ-wuri.wuri.ci"
   db_port: "5432"
   # if this is not false it will directly take pass from this variable, else it will take from db_pass_secretref
   db_pass_direct: false
@@ -12,7 +12,7 @@ base:
   kibana_url: http://kibana.cattle-logging-system:5601
 
 debezium_connectors:
-  image: mosipqa/debezium-init
+  image: mosipid/debezium-init
   imageTag: 1.2.0.1
   imagePullPolicy: Always
 
@@ -30,9 +30,11 @@ debezium_connectors:
     tables: "ida.auth_transaction"
   - name: "mosip_regprc"
     tables: "regprc.registration,regprc.registration_list"
+  - name: "mosip_migrater_test"
+    tables: "public.packet_tracker"
 
 es_kafka_connectors:
-  image: mosipqa/es-kafka-connect-init
+  image: mosipid/es-kafka-connect-init
   imageTag: 1.2.0.1
   imagePullPolicy: Always
 
