@@ -62,5 +62,6 @@ curl \
           "transforms.tsSelect.type": "io.mosip.kafka.connect.transforms.TimestampSelector$Value",
           "transforms.tsSelect.ts.order": "cr_dtimes",
           "transforms.tsSelect.output.field": "@timestamp_gen"
+          "transforms.tsSelect.topic.regex": "public.packet_tracker"
       }
 }';
