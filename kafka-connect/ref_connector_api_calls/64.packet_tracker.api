@@ -11,7 +11,7 @@ CONN_NAME="migration_packet_tracker_$DB_PREFIX_INDEX"; # change this.. give uniq
 ES_CONN_URL='es-connect:8083'; # needn't change .. this is the ES-connector service name
 
 DB_NAME='postgres'; # change this
-DB_TABLES='public.packet_tracker'
+DB_TABLES='public.packet_tracker,public.region,public.chef_lieu,public.departement,public.sous_prefecture,public.commune,public.resident,public.gender,public.resident_status'
 ES_INDICES=$(echo $DB_TABLES | sed -E "s/([^,]+)/$DB_PREFIX_INDEX.\1/g")
 
 curl \

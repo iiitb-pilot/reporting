@@ -29,8 +29,8 @@ debezium_connectors:
     tables: "print.print_transaction"
   - name: "mosip_keymgr"
     tables: "keymgr.partner_certificate_expiry"
-  - name: "mosip_migrater_test"
-    tables: "public.packet_tracker"
+  - name: "mosip_migrater"
+    tables: "public.packet_tracker,public.region,public.chef_lieu,public.departement,public.sous_prefecture,public.commune,public.resident,public.gender,public.resident_status"
 
 es_kafka_connectors:
   enabled: true
