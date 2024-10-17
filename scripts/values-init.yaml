@@ -1,10 +1,10 @@
-# base:
-#   db_prefix:
-#   db_user:
-#   db_hostname:
-#   db_port:
+ base:
+   db_prefix: "mosip"
+   db_user: postgres
+   db_hostname: postgres.civ-wuri.wuri.ci
+   db_port: 5432
 #   # if this is not false it will directly take pass from this variable, else it will take from db_pass_secretref
-#   db_pass_direct:
+   db_pass_direct: <postgres password>
 #   es_url:
 #   kibana_url:
 
@@ -37,8 +37,8 @@ es_kafka_connectors:
   delay_between_connectors: "10s"
   # existingConfigMap:
 
-base:
-  db_prefix: "mosip"
-  db_user: postgres
-  db_hostname: "postgres-postgresql.postgres"
-  db_port: "5432"
+    #base:
+    #  db_prefix: "mosip"
+    # db_user: postgres
+    #  db_hostname: "postgres-postgresql.postgres"
+    #  db_port: "5432"
