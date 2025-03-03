@@ -62,5 +62,13 @@ curl \
           "transforms.tsSelect.type": "io.mosip.kafka.connect.transforms.TimestampSelector$Value",
           "transforms.tsSelect.ts.order": "cr_dtimes",
           "transforms.tsSelect.output.field": "@timestamp_gen"
+
+          "transforms.tsSelect.type": "io.mosip.kafka.connect.transforms.TimestampSelector$Value",
+          "transforms.tsSelect.ts.order": "issued_on",
+          "transforms.tsSelect.output.field": "@timestamp_gen"
+
+          "transforms.tsSelect.type": "io.mosip.kafka.connect.transforms.TimestampSelector$Value",
+          "transforms.tsSelect.ts.order": "expires_on",
+          "transforms.tsSelect.output.field": "@timestamp_gen"
       }
 }';
