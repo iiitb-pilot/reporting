@@ -36,7 +36,7 @@ curl \
 
           "behavior.on.null.values": "DELETE",
 
-          "transforms": "debezExtract,tsconvert01,tsconvert04,tsconvert05,tsconvert07,tsSelect",
+          "transforms": "debezExtract,tsconvert01,tsconvert04,tsconvert05,tsconvert07,tsconvert08,tsconvert09,tsSelect",
 
           "transforms.debezExtract.type": "io.debezium.transforms.ExtractNewRecordState",
           "transforms.debezExtract.delete.handling.mode": "drop",
@@ -59,16 +59,16 @@ curl \
           "transforms.tsconvert07.field": "resume_timestamp",
           "transforms.tsconvert07.input.type": "micro_sec",
 
+          "transforms.tsconvert08.type": "io.mosip.kafka.connect.transforms.TimestampConverterAdv$Value",
+          "transforms.tsconvert08.field": "issued_on",
+          "transforms.tsconvert08.input.type": "micro_sec",
+
+          "transforms.tsconvert09.type": "io.mosip.kafka.connect.transforms.TimestampConverterAdv$Value",
+          "transforms.tsconvert09.field": "expires_on",
+          "transforms.tsconvert09.input.type": "micro_sec",
+
           "transforms.tsSelect.type": "io.mosip.kafka.connect.transforms.TimestampSelector$Value",
           "transforms.tsSelect.ts.order": "cr_dtimes",
-          "transforms.tsSelect.output.field": "@timestamp_gen"
-
-          "transforms.tsSelect.type": "io.mosip.kafka.connect.transforms.TimestampSelector$Value",
-          "transforms.tsSelect.ts.order": "issued_on",
-          "transforms.tsSelect.output.field": "@timestamp_gen"
-
-          "transforms.tsSelect.type": "io.mosip.kafka.connect.transforms.TimestampSelector$Value",
-          "transforms.tsSelect.ts.order": "expires_on",
           "transforms.tsSelect.output.field": "@timestamp_gen"
       }
 }';
